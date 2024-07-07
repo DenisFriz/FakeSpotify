@@ -31,7 +31,7 @@ const router = createBrowserRouter(
           element={
             <ErrorBoundary
               FallbackComponent={ErrorComponent}
-              onReset={() => (location.href = "/")}
+              onReset={() => (location.href = "/FakeSpotify")}
             >
               <Suspense fallback={<div></div>}>
                 <LazyAllPage />
@@ -44,7 +44,7 @@ const router = createBrowserRouter(
           element={
             <ErrorBoundary
               FallbackComponent={ErrorComponent}
-              onReset={() => (location.href = "/")}
+              onReset={() => (location.href = "/FakeSpotify")}
             >
               <Suspense fallback={<div></div>}>
                 <LazyMusicPage />
@@ -57,7 +57,7 @@ const router = createBrowserRouter(
           element={
             <ErrorBoundary
               FallbackComponent={ErrorComponent}
-              onReset={() => (location.href = "/")}
+              onReset={() => (location.href = "/FakeSpotify")}
             >
               <Suspense fallback={<div></div>}>
                 <LazyPodcastsPage />
@@ -70,7 +70,7 @@ const router = createBrowserRouter(
           element={
             <ErrorBoundary
               FallbackComponent={ErrorComponent}
-              onReset={() => (location.href = "/")}
+              onReset={() => (location.href = "/FakeSpotify")}
             >
               <Suspense fallback={<div></div>}>
                 <LazyEpisode />
@@ -83,7 +83,7 @@ const router = createBrowserRouter(
           element={
             <ErrorBoundary
               FallbackComponent={ErrorComponent}
-              onReset={() => (location.href = "/")}
+              onReset={() => (location.href = "/FakeSpotify")}
             >
               <Suspense fallback={<div></div>}>
                 <LazyArtistsPage />
@@ -96,7 +96,7 @@ const router = createBrowserRouter(
           element={
             <ErrorBoundary
               FallbackComponent={ErrorComponent}
-              onReset={() => (location.href = "/")}
+              onReset={() => (location.href = "/FakeSpotify")}
             >
               <Suspense fallback={<div></div>}>
                 <LazyPlaylist />
@@ -109,7 +109,7 @@ const router = createBrowserRouter(
           element={
             <ErrorBoundary
               FallbackComponent={ErrorComponent}
-              onReset={() => (location.href = "/")}
+              onReset={() => (location.href = "/FakeSpotify")}
             >
               <Suspense fallback={<div></div>}>
                 <LazySearchPage />

@@ -4,7 +4,7 @@ import searchIcon from "../../assets/images/search-icon.png";
 import React, { useEffect, useState } from "react";
 
 const client_id = "55e9c94a6b3147c09dca2ce8422270a4";
-const REDIRECT_URL = "http://localhost:5173";
+const REDIRECT_URL = "https://denisfriz.github.io/FakeSpotify";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 
