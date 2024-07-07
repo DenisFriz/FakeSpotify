@@ -25,7 +25,7 @@ const LazyNotFoundPage = lazy(() => import("./Pages/NotFoundPage.tsx"));
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Layout />}>
+      <Route path="/FakeSpotify" element={<Layout />}>
         <Route
           index
           element={

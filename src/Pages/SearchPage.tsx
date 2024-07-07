@@ -56,7 +56,7 @@ const SearchPage: React.FC = () => {
       <div className="search__top">
         <div className="search__left">
           <p data-testid="search-page">Лучший результат</p>
-          <Link to={`/artist/${data.artists.items[0].id}`}>
+          <Link to={`/FakeSpotify/artist/${data.artists.items[0].id}`}>
             <div className="search__artist">
               <img
                 className="search__img"
@@ -95,7 +95,7 @@ const SearchPage: React.FC = () => {
       </div>
       <Row title="Исполнители" classNames="row__container-fullpage">
         {data.artists.items.map((item, id) => (
-          <Link key={id} to={`/artist/${item.id}`}>
+          <Link key={id} to={`/FakeSpotify/artist/${item.id}`}>
             <div className="row__item row__item-artists">
               <img
                 className="row__img"
@@ -111,7 +111,7 @@ const SearchPage: React.FC = () => {
       </Row>
       <Row title="Плейлисты" classNames="row__container-fullpage">
         {data.playlists.items.map((item, id) => (
-          <Link key={id} to={`/playlist/${item.id}`}>
+          <Link key={id} to={`/FakeSpotify/playlist/${item.id}`}>
             <div className="row__item">
               <img className="row__img" src={item.images[0].url} alt="" />
               <p className="row__name">{item.name}</p>

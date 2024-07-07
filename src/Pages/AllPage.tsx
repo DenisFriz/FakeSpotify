@@ -62,7 +62,7 @@ const AllPage: React.FC = () => {
       <HomeList />
       <Row title="Только для тебя" show_text="Показать все">
         {data.map((item, id) => (
-          <Link key={id} to={`/playlist/${item.id}`}>
+          <Link key={id} to={`/FakeSpotify/playlist/${item.id}`}>
             <div className="row__item">
               <img className="row__img" src={item.images[0].url} alt="" />
               <p className="row__name">{item.name}</p>
@@ -76,7 +76,7 @@ const AllPage: React.FC = () => {
       </Row>
       <Row title="Только для тебя" show_text="Показать все">
         {data.map((item, id) => (
-          <Link key={id} to={`/playlist/${item.id}`}>
+          <Link key={id} to={`/FakeSpotify/playlist/${item.id}`}>
             <div className="row__item">
               <img className="row__img" src={item.images[0].url} alt="" />
               <p className="row__name">{item.name}</p>
@@ -90,7 +90,7 @@ const AllPage: React.FC = () => {
       </Row>
       <Row title="Любимые исполнители" show_text="Показать все">
         {artists.artists.map((item, id) => (
-          <Link key={id} to={`/artist/${item.id}`}>
+          <Link key={id} to={`/FakeSpotify/artist/${item.id}`}>
             <div className="row__item row__item-artists">
               <img className="row__img" src={item.images[2].url} alt="" />
               <p className="row__name">{item.name}</p>

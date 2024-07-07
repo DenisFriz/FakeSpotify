@@ -55,7 +55,7 @@ const PodcastsPage: React.FC = () => {
       <HomeHeader />
       <Row title="Только для тебя" show_text="Показать все">
         {data.episodes.map((item, id) => (
-          <Link key={id} to={`/episode/${item.id}`}>
+          <Link key={id} to={`/FakeSpotify/episode/${item.id}`}>
             <div className="row__item">
               <img className="row__img" src={item.images[0].url} alt="" />
               <p className="row__name">{item.name}</p>

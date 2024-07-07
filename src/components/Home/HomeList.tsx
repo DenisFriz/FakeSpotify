@@ -27,7 +27,7 @@ const HomeList: React.FC = () => {
   return (
     <div className="home__listsplit">
       {data.map((item, id) => (
-        <Link key={id} to={`/playlist/${item.id}`}>
+        <Link key={id} to={`/FakeSpotify/playlist/${item.id}`}>
           <div className="home__listsplit-item">
             <img src={item.images[0].url} alt="" />
             <span>{item.name}</span>

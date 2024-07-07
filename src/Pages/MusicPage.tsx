@@ -45,7 +45,7 @@ const MusicPage: React.FC = () => {
       <HomeList />
       <Row title="Только для тебя" show_text="Показать все">
         {data.map((item, id) => (
-          <Link key={id} to={`/playlist/${item.id}`}>
+          <Link key={id} to={`/FakeSpotify/playlist/${item.id}`}>
             <div className="row__item">
               <img className="row__img" src={item.images[0].url} alt="" />
               <p className="row__name">{item.name}</p>

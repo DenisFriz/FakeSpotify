@@ -13,7 +13,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/");
+    navigate("/FakeSpotify");
   };
 
   const handlePrevPage = () => {
@@ -25,7 +25,7 @@ const Header = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    navigate(`/search/${query}`);
+    navigate(`/FakeSpotify/search/${query}`);
   };
 
   const [token, setToken] = useState("");
@@ -34,16 +34,19 @@ const Header = () => {
     let token = window.localStorage.getItem("access_token");
 
     if (!token && hash) {
-      token = hash
-        .substring(1)
-        .split("&")
-        .find((elem) => elem.startsWith("access_token"))
-        .split("=")[1];
+      const hashParams = hash.substring(1).split("&");
+      const tokenParam = hashParams.find((elem) =>
+        elem.startsWith("access_token")
+      );
 
-      window.location.hash = "";
-
-      window.localStorage.setItem("access_token", token);
-      setTimeout(() => {}, 3480);
+      if (tokenParam) {
+        token = tokenParam.split("=")[1];
+        if (token) {
+          window.location.hash = "";
+          window.localStorage.setItem("access_token", token);
+          setTimeout(() => {}, 3480);
+        }
+      }
     }
     if (token) setToken(token);
   }, []);

@@ -6,7 +6,7 @@ const HomeHeader: React.FC = () => {
     <div className="home__header">
       <ul className="home__list">
         <NavLink
-          to="/"
+          to="/FakeSpotify"
           className={({ isActive, isPending }) =>
             isPending
               ? "home__link"
@@ -18,7 +18,7 @@ const HomeHeader: React.FC = () => {
           Все
         </NavLink>
         <NavLink
-          to="/music"
+          to="/FakeSpotify/music"
           className={({ isActive, isPending }) =>
             isPending
               ? "home__link"
@@ -30,7 +30,7 @@ const HomeHeader: React.FC = () => {
           Музыка
         </NavLink>
         <NavLink
-          to="/podcasts"
+          to="/FakeSpotify/podcasts"
           className={({ isActive, isPending }) =>
             isPending
               ? "home__link"
