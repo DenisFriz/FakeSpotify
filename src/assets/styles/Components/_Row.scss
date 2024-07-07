@@ -1,0 +1,123 @@
+@use "../mixins" as m;
+.row {
+  &__header {
+    margin-bottom: 20px;
+    @include m.d-flex($justify-content: space-between, $align-items: center);
+  }
+
+  &__title {
+    cursor: pointer;
+    font-size: 30px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__show {
+    font-size: 17px;
+    color: #b3b3b3;
+  }
+
+  &__container {
+    --column-count: 6;
+    display: grid;
+    grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
+    grid-template-rows: auto;
+    @include m.media-max-width(1743px) {
+      --column-count: 5;
+    }
+    @include m.media-max-width(1595px) {
+      --column-count: 4;
+    }
+    @include m.media-max-width(1421px) {
+      --column-count: 3;
+    }
+    @include m.media-max-width(897px) {
+      --column-count: 2;
+    }
+  }
+
+  &__item {
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-radius: 8px;
+    padding: clamp(0.25rem, 0.135rem + 0.308vw, 0.5rem);
+    transition: background 0.4s ease;
+    font-size: 18px;
+    max-width: 170px;
+    @include m.media-max-width(675px) {
+      width: 100%;
+    }
+    &:hover {
+      background: #212121;
+      > .hover_btn {
+        opacity: 1;
+        top: 40%;
+      }
+    }
+
+    &--big > img {
+      height: 110px;
+    }
+  }
+
+  &__img {
+    border-radius: 8px;
+    height: 170px;
+    max-width: 170px;
+    object-fit: cover;
+  }
+
+  &__name {
+    margin: 10px 0;
+    color: #f4f4f4;
+    font-size: 18px;
+    @include m.text-ellipsis(2);
+  }
+
+  &__authors {
+    color: #b3b0ae;
+    @include m.text-ellipsis(2);
+  }
+}
+
+.row-size--small {
+  width: 110px;
+  @include m.media-max-width(1360px) {
+    width: 100px;
+  }
+  @include m.media-max-width(1037px) {
+    width: 90px;
+  }
+  > img {
+    height: 110px;
+  }
+}
+
+.row__container-sidebar {
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  @include m.media-max-width(800px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    .row-size--small {
+      width: 110px;
+    }
+  }
+}
+
+.row__item-artists {
+  > img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.row__container-fullpage {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}

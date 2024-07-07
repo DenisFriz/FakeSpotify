@@ -1,0 +1,78 @@
+@use "../mixins" as m;
+
+.music-item {
+  cursor: pointer;
+  color: #a7a7a7;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 35px 1fr 1fr 50px;
+  grid-template-rows: 52px;
+  align-items: center;
+  transition: background-color 0.3s ease-in;
+  @include m.media-max-width(775px) {
+    grid-template-columns: 35px 1fr 0px 50px;
+    .music-item__name {
+      display: none;
+    }
+  }
+  &:hover {
+    background-color: #212121;
+
+    .music-item__index {
+      font-size: 0;
+      &::before {
+        display: block;
+      }
+    }
+  }
+
+  &__index {
+    text-align: center;
+    margin-right: 8px;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 7px 0 7px 10px;
+      border-color: transparent transparent transparent #ffffff;
+    }
+  }
+
+  &__main {
+    @include m.d-flex($align-items: center);
+    column-gap: 10px;
+  }
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &__right {
+  }
+
+  &__title {
+    color: #fff;
+    @include m.text-ellipsis(1);
+  }
+
+  &__name {
+  }
+
+  &__time {
+  }
+}
+
+.music-item--without-index {
+  grid-template-columns: 1fr 1fr 50px;
+}

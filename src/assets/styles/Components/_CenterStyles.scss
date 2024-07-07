@@ -1,0 +1,12 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+.center {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background: v.$bg-linear-gradient-main;
+  border-radius: 8px;
+  padding: 20px 8px;
+  color: #fff;
+  height: calc(100vh - 65px);
+  overflow: auto;
+}

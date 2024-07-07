@@ -1,0 +1,43 @@
+@use "../mixins" as m;
+.current-track {
+  grid-row: 2 / span 2;
+  background: #121212;
+  padding: clamp(0.5rem, 0.298rem + 0.538vw, 0.938rem);
+  color: #fff;
+  height: calc(100vh - 65px);
+  border-radius: 8px;
+  overflow: auto;
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__top {
+    @include m.d-flex($display: flex, $justify-content: space-between);
+    > span {
+      font-size: 20px;
+    }
+    > div {
+      cursor: pointer;
+    }
+  }
+
+  &__img {
+    margin-top: 12px;
+    border-radius: 10px;
+  }
+
+  &__title {
+    @include m.d-flex($display: flex);
+    margin-top: 15px;
+  }
+
+  &__left {
+    font-size: 20px;
+    flex-grow: 1;
+  }
+
+  &__actions {
+    @include m.d-flex($display: flex, $align-items: center);
+  }
+}

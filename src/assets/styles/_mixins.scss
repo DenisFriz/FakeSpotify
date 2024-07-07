@@ -1,0 +1,27 @@
+@mixin text-ellipsis($line-clamp: 1) {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+@mixin d-flex(
+  $display: flex,
+  $flex-direction: row,
+  $justify-content: flex-start,
+  $align-items: stretch
+) {
+  display: $display;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin media-max-width($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}

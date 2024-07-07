@@ -1,0 +1,23 @@
+@keyframes anime-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.skeleton {
+  background-color: rgba(19, 16, 16, 0.11);
+  animation: anime-pulse 2s ease-in-out 0.5s infinite;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 15px;
+  }
+}

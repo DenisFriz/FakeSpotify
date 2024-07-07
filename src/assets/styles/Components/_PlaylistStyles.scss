@@ -1,0 +1,61 @@
+@use "../mixins" as m;
+
+.playlist {
+  &__header {
+    padding: 32px 20px 10px;
+    @include m.media-max-width(835px) {
+      padding: 8px 4px 5px;
+    }
+  }
+
+  &__wrapper {
+    @include m.d-flex($display: flex);
+    column-gap: clamp(0.375rem, -0.029rem + 1.077vw, 1.25rem);
+  }
+
+  &__img {
+    border-radius: 5px;
+    height: 185px;
+    @include m.media-max-width(850px) {
+      height: 125px;
+    }
+  }
+
+  &__info {
+    color: #fff;
+    @include m.d-flex($flex-direction: column, $justify-content: center);
+  }
+
+  &__top {
+  }
+
+  &__table-head {
+    position: sticky;
+    top: 0;
+    color: #a7a7a7;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 35px 1fr 1fr 50px;
+    grid-template-rows: 32px;
+    align-items: center;
+    border-bottom: 1px solid #474340;
+    background-color: #1a1a1a;
+  }
+
+  &__name {
+    font-size: clamp(2.25rem, 0.923rem + 3.538vw, 5.125rem);
+    font-weight: 900;
+  }
+
+  &__desc {
+    margin-top: 8px;
+  }
+
+  &__footer {
+    margin-top: 12px;
+    @include m.d-flex($display: flex);
+  }
+
+  &__followers {
+  }
+}

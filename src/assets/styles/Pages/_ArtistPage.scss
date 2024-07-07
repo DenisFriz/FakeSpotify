@@ -1,0 +1,42 @@
+@use "../mixins" as m;
+
+.artist {
+  &__header {
+    @include m.d-flex($align-items: center);
+    column-gap: 20px;
+  }
+
+  &__img {
+    height: 185px;
+    width: 185px;
+    border-radius: 50%;
+    @include m.media-max-width(850px) {
+      height: 125px;
+      width: 125px;
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+  }
+
+  &__confirm {
+    font-size: 18px;
+  }
+
+  &__name {
+    margin-top: 15px;
+    font-size: clamp(3.125rem, 2.548rem + 1.538vw, 4.375rem);
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
+
+  &__show-more-btn {
+    border: none;
+    background-color: transparent;
+    color: rgba($color: #fff, $alpha: 0.5);
+    &:hover {
+      color: rgba($color: #fff, $alpha: 1);
+    }
+  }
+}

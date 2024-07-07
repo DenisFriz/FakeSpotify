@@ -1,0 +1,12 @@
+.episode {
+  padding: 15px;
+  &__top {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 44px;
+  }
+  &__description {
+    font-size: 18px;
+    color: #b3b3b3;
+  }
+}

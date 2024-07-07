@@ -1,0 +1,64 @@
+@use "../mixins" as m;
+.search {
+  &__top {
+    margin-bottom: 30px;
+    @include m.d-flex();
+    column-gap: 20px;
+    @include m.media-max-width(965px) {
+      flex-direction: column;
+      row-gap: 10px;
+      .search__left {
+        width: clamp(17.188rem, 13.582rem + 9.615vw, 25rem);
+      }
+    }
+  }
+
+  &__left {
+    p {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__right {
+    flex-grow: 1;
+  }
+
+  &__artist {
+    position: relative;
+    @include m.d-flex($display: inline-flex, $flex-direction: column);
+    background: #181818;
+    padding: 20px 14px;
+    border-radius: 8px;
+    width: 100%;
+    > .hover_btn {
+      top: 70%;
+    }
+    &:hover {
+      .hover_btn {
+        opacity: 1;
+        top: 70%;
+      }
+    }
+    span {
+      color: #a7a7a7;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #fff;
+  }
+}

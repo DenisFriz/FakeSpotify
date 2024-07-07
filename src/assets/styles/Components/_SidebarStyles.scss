@@ -1,0 +1,82 @@
+@use "../mixins" as m;
+
+.sidebar {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 2;
+  background: #121212;
+  border-radius: 10px;
+  padding: clamp(0.375rem, 0.029rem + 0.923vw, 1.125rem)
+    clamp(0.375rem, 0.202rem + 0.462vw, 0.75rem);
+  height: calc(100vh - 65px);
+  @include m.media-max-width(1745px) {
+  }
+  &__header {
+    @include m.d-flex(
+      $display: flex,
+      $justify-content: space-between,
+      $align-items: center
+    );
+    column-gap: 20px;
+    span {
+      color: white;
+    }
+    p {
+      color: #a7a7a7;
+      font-size: 18px;
+    }
+  }
+
+  &__open {
+    color: #828282;
+    font-size: 30px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-count: 2;
+  }
+
+  &__buttons {
+    display: inline-flex;
+    column-gap: 20px;
+  }
+
+  &--full {
+    .sidebar__open {
+      transform: rotate(-180deg);
+    }
+
+    .sidebar__content {
+      grid-template-columns: repeat(4, 120px);
+      column-count: 4;
+    }
+  }
+
+  &--small-1 {
+    width: 70px;
+
+    .sidebar__content {
+      margin-top: 10px;
+      grid-template-columns: 1fr;
+      row-gap: 10px;
+    }
+
+    .sidebar__buttons {
+      display: none;
+    }
+
+    .album {
+      padding: 0;
+    }
+
+    .album__title,
+    .album__authors {
+      display: none;
+    }
+    .album--size-small {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

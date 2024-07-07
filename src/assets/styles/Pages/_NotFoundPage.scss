@@ -1,0 +1,30 @@
+.notfound {
+  height: 100vh;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__block {
+    color: #fff;
+    text-align: center;
+  }
+
+  &__status {
+    font-size: 70px;
+    font-weight: 800;
+  }
+
+  &__message {
+    font-size: 30px;
+  }
+
+  &__button {
+    cursor: pointer;
+    border-style: none;
+    outline: none;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 12px 8px;
+  }
+}
